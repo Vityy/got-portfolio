@@ -1,0 +1,15 @@
+.continents-wrapper{
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.continent-card{
+  background: radial-gradient(circle,rgba(235, 172, 0, 1) 0%, rgba(120, 92, 0, 1) 50%);
+  border-radius: 5px;
+  text-align: center;
+  align-content: center;
+  min-height: 50px;
+  min-width: 200px;
+  max-width: 200px;
+  margin: 5px;
+}

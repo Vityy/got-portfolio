@@ -23,7 +23,6 @@ export class App implements OnInit {
   // On stock tous les personnages dans un tableau.
   protected characters!: Characters[]; // ! est pour indiquer qu'on initialise à rien
   protected continents!: Continents[];
-
   protected filteredCharacters!: Characters[];
 
   ngOnInit(): void {

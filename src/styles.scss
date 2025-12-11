@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+$title-color: #58360e;
+$subtitle-color: #ff7504;
+$shadow: 4px 4px 3px black;
+
+body{
+  background: radial-gradient(circle,rgba(145, 107, 0, 1) 0%, rgba(23, 17, 0, 1) 100%);
+}
+
+h1{
+  color: $title-color;
+}
+
+h2{
+  color: $subtitle-color;
+}
+
+h1,
+h2{
+  text-shadow: $shadow;
+}
