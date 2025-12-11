@@ -1,19 +1,29 @@
+@import '../../../styles.scss';
+
+.characters-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .character-card{
   background: radial-gradient(circle,rgba(235, 172, 0, 1) 0%, rgba(120, 92, 0, 1) 50%);
   border-radius: 8px;
   text-align: center;
   align-content: center;
-  min-height: 50px;
+  min-height: 300px;
   min-width: 200px;
-  max-width: 200px;
+  min-width: 20%;
+  max-width: 20%;
   margin: 10px;
+  text-shadow: $shadow;
+  color: rgb(189, 76, 0);
 }
 
 .character-card img{
-  // max-width: 100px;
-  // max-height: 100px;
   object-fit: cover;
   width: 60%;
-  height: 100px;
+  height: 200px;
   border-radius: 10px;
 }
