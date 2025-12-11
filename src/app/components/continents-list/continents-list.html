@@ -1,7 +1,7 @@
 <div class="continents-wrapper">
   @for(continent of continentsFromApi; track continent.id){
-    <div class="character-card">
-      <h2>{{ continent.name }}</h2>
+    <div class="continent-card">
+      <h2>{{ continent.id + 1 }}.{{ continent.name }}</h2>
     </div>
   } @empty {
     <p>Aucun continent disponible</p>
