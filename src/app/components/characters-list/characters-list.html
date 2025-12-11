@@ -3,7 +3,8 @@
     <div class="character-card">
       <h2>{{ character.fullName }}</h2>
       <p>{{ character.title }}</p>
-      <strong>{{ character.family }}</strong>
+      <strong>{{ character.family }}</strong><br>
+      <img src={{character.imageUrl}} alt={{character.image}}><br>
     </div>
   } @empty {
     <p>Aucun personnage disponible</p>
