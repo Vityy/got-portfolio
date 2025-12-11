@@ -1,18 +1,20 @@
-<h1>CHARACTERS</h1>
-<br/>
-
-@if(characters){
-  <app-characters-list [charactersFromApi]="characters" />
-}
-
-<br/>
-<br/>
-<br/>
+<input #searchInput type="text" placeholder="chercher un personnage" (input)="onSearch(searchInput.value)"><br>
 
 <h1>CONTINENTS</h1>
 
 @if(continents){
   <app-continents-list [continentsFromApi]="continents"/>
+}
+
+<br>
+<br>
+<br>
+
+<h1>CHARACTERS</h1>
+<br>
+
+@if(characters){
+  <app-characters-list [charactersFromApi]="filteredCharacters" />
 }
 
 <router-outlet/>

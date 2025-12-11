@@ -24,15 +24,32 @@ export class App implements OnInit {
   protected characters!: Characters[]; // ! est pour indiquer qu'on initialise à rien
   protected continents!: Continents[];
 
-  ngOnInit(): void {
-    this.characterService.getCharacters().subscribe((charactersFromApi: Characters[]) => {
-      this.characters = charactersFromApi;
-      this.cdr.detectChanges();
-    });
+  protected filteredCharacters!: Characters[];
 
+  ngOnInit(): void {
+    this.getAllContinentsInTemplate();
+    this.getCharactersInTemplate();
+  }
+
+  protected onSearch(term: string) : void {
+    this.filteredCharacters = this.characters.filter((character: Characters) => {
+      const fullName = character.fullName ?? '';
+      return fullName.toLowerCase().includes(term.toLowerCase());
+    })
+  }
+
+  private getAllContinentsInTemplate(){
     this.continentService.getContinents().subscribe((continentsFromApi: Continents[]) => {
       this.continents = continentsFromApi;
       this.cdr.detectChanges();
     })
+  }
+
+  private getCharactersInTemplate(){
+    this.characterService.getCharacters().subscribe((charactersFromApi: Characters[]) => {
+      this.characters = charactersFromApi;
+      this.filteredCharacters = charactersFromApi;
+      this.cdr.detectChanges();
+    });
   }
 }
