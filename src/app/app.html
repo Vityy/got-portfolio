@@ -1,6 +1,19 @@
+<h1>CHARACTERS</h1>
+<br/>
+
 @if(characters){
   <app-characters-list [charactersFromApi]="characters" />
-  <app-characters-list [stringToShow]="stringTest" />
+}
+
+<br/>
+<br/>
+<br/>
+
+<h1>CONTINENTS</h1>
+<br/>
+
+@if(continents){
+  <app-continents-list [continentsFromApi]="continents"/>
 }
 
 <router-outlet/>

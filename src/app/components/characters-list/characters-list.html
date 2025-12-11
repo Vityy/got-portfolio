@@ -1,7 +1,7 @@
 <div class="characters-wrapper">
   @for(character of charactersFromApi; track character.id){
     <div class="character-card">
-      <h1>{{ character.fullName }}</h1>
+      <h2>{{ character.fullName }}</h2>
       <p>{{ character.title }}</p>
       <strong>{{ character.family }}</strong>
     </div>
@@ -9,5 +9,3 @@
     <p>Aucun personnage disponible</p>
   }
 </div>
-
-<p>{{ stringToShow }}</p>

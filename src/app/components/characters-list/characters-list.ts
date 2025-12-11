@@ -9,5 +9,4 @@ import { Characters } from '../../shared/models/characters.model';
 })
 export class CharactersList {
   @Input() charactersFromApi!: Characters[];
-  @Input() stringToShow!: string;
 }
