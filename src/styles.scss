@@ -11,6 +11,8 @@ body{
 h1{
   color: $title-color;
   text-align: center;
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: white;
 }
 
 h2{

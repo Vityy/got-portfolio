@@ -1,9 +1,9 @@
 <div class="characters-wrapper">
   @for(character of charactersFromApi; track character.id){
     <div class="character-card">
-      <h2>Name: {{ character.fullName }}</h2>
-      <p><strong>Title:</strong> {{ character.title }}</p>
-      <p><strong>Family:</strong> {{ character.family }}</p>
+      <h2>{{ character.fullName }}</h2>
+      <p><strong> {{ character.title }} </strong></p>
+      <p><strong>Family: {{ character.family }}</strong></p>
       <img class="character-image" src={{character.imageUrl}} alt={{character.image}}>
     </div>
   } @empty {

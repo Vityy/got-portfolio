@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, OnInit, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CharactersList } from "./components/characters-list/characters-list";
 import { Character } from './shared/service/character';
@@ -24,6 +24,8 @@ export class App implements OnInit {
   protected characters!: Characters[]; // ! est pour indiquer qu'on initialise à rien
   protected continents!: Continents[];
   protected filteredCharacters!: Characters[];
+  protected filteredCharactersCount!: number;
+  protected filteredCharactersString = signal(0);
 
   ngOnInit(): void {
     this.getAllContinentsInTemplate();
@@ -35,6 +37,9 @@ export class App implements OnInit {
       const fullName = character.fullName ?? '';
       return fullName.toLowerCase().includes(term.toLowerCase());
     })
+
+    this.filteredCharactersCount = this.filteredCharacters.length;
+    this.filteredCharactersString.update(signal(this.filteredCharactersCount));
   }
 
   private getAllContinentsInTemplate(){
@@ -48,6 +53,8 @@ export class App implements OnInit {
     this.characterService.getCharacters().subscribe((charactersFromApi: Characters[]) => {
       this.characters = charactersFromApi;
       this.filteredCharacters = charactersFromApi;
+      this.filteredCharactersCount = this.filteredCharacters.length;
+      this.filteredCharactersString.update(signal(this.filteredCharactersCount));
       this.cdr.detectChanges();
     });
   }

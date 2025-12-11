@@ -13,7 +13,8 @@
 <br>
 
 <h1>CHARACTERS</h1>
-<br>
+
+<p class="characters-count"> {{ filteredCharactersString() }} characters</p>
 
 @if(characters){
   <app-characters-list [charactersFromApi]="filteredCharacters" />
