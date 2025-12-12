@@ -10,6 +10,7 @@ div{
   align-items: center;
   margin-top: 25px;
   margin-bottom: 25px;
+  color: white;
 }
 
 .characters-count{
@@ -17,4 +18,8 @@ div{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.selected{
+  color: chartreuse;
 }

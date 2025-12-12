@@ -6,10 +6,11 @@ import { Characters } from './shared/models/characters.model';
 import { ContinentsList } from "./components/continents-list/continents-list";
 import { Continent } from './shared/service/continent';
 import { Continents } from './shared/models/continents.model';
+import { NgClass, NgStyle } from "@angular/common";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CharactersList, ContinentsList],
+  imports: [RouterOutlet, CharactersList, ContinentsList, NgClass, NgStyle],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -26,6 +27,15 @@ export class App implements OnInit {
   protected filteredCharacters!: Characters[];
   protected filteredCharactersCount!: number;
   protected filteredCharactersString = signal(0);
+
+  protected isSelected = false;
+  protected isWarning = true;
+  protected isActive = true;
+  protected colorCrimson = 'crimson';
+
+  protected toggleSelected(){
+    this.isSelected = !this.isSelected;
+  }
 
   ngOnInit(): void {
     this.getAllContinentsInTemplate();

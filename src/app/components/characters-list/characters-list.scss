@@ -12,11 +12,11 @@
   border-radius: 8px;
   text-align: center;
   align-content: center;
-  min-height: 300px;
-  min-width: 200px;
-  min-width: 20%;
-  max-width: 20%;
-  margin: 10px;
+  min-height: 500px;
+  max-height: 500px;
+  min-width: 22.5%;
+  max-width: 22.5%;
+  margin: 20px;
   text-shadow: $shadow;
   color: rgb(189, 76, 0);
   box-shadow: 10px 10px 5px black;
@@ -25,6 +25,7 @@
 .character-card img{
   object-fit: cover;
   width: 60%;
-  height: 200px;
+  min-height: 350px;
+  max-height: 350px;
   border-radius: 10px;
 }

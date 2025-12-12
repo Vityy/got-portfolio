@@ -1,6 +1,16 @@
-<div>
-  <input #searchInput type="text" placeholder="chercher un personnage" (input)="onSearch(searchInput.value)"><br>
+<!-- <div [ngClass]="{selected: isSelected}">
+  Coucou, l'état de isSelected est: {{ isSelected }}
+</div> -->
+
+<!-- <div [ngClass]="['card', isActive ? 'active' : '']">
+  <p>Coucou, ngClass en tableau</p>
+</div> -->
+
+<div [ngStyle]="{color: colorCrimson}">
+  <p>Coucou, ngStyle en tableau</p>
 </div>
+
+<!-- <button (click)="toggleSelected()">Toggle isSelected</button> -->
 
 <h1>CONTINENTS</h1>
 
@@ -11,6 +21,10 @@
 <br>
 <br>
 <br>
+
+<div>
+  <input #searchInput type="text" placeholder="chercher un personnage" (input)="onSearch(searchInput.value)"><br>
+</div>
 
 <h1>CHARACTERS</h1>
 
