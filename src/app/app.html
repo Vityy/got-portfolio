@@ -1,24 +1,20 @@
-<!-- <div [ngClass]="{selected: isSelected}">
-  Coucou, l'état de isSelected est: {{ isSelected }}
+<button (click)="onExerciceClick()">Exercice</button>
+
+<!-- <div>
+  <h1 [ngStyle]="{color: 'blue', background: 'black'}">EXERCICE 1</h1>
 </div> -->
 
-<!-- <div [ngClass]="['card', isActive ? 'active' : '']">
-  <p>Coucou, ngClass en tableau</p>
+<!-- <div>
+  <h1 [style.color]="isToggled ? 'blue' : 'crimson'">EXERCICE 1</h1>
 </div> -->
 
-<!-- <div [ngStyle]="{color: colorCrimson}">
-  <p>Coucou, ngStyle en tableau</p>
+<!-- <div [style.background]="'black'">
+  <h1>EXERCICE 1</h1>
 </div> -->
 
-<!-- <div class="coucou" [class.online]="isOnline">
-  <p>Hello, nouvelle manière de faire</p>
-</div> -->
-
-<div class="coucou" [style.color]="isOnline ? 'green' : 'red'">
-  <p>Hello, nouvelle manière de faire</p>
+<div [ngClass]="{toggled: isToggled}">
+  <h1>EXERCICE 1</h1>
 </div>
-
-<!-- <button (click)="toggleSelected()">Toggle isSelected</button> -->
 
 <h1>CONTINENTS</h1>
 

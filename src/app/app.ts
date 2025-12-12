@@ -28,14 +28,10 @@ export class App implements OnInit {
   protected filteredCharactersCount!: number;
   protected filteredCharactersString = signal(0);
 
-  protected isSelected = false;
-  protected isWarning = true;
-  protected isActive = true;
-  protected isOnline = true;
-  protected colorCrimson = 'crimson';
+  protected isToggled = false;
 
-  protected toggleSelected(){
-    this.isSelected = !this.isSelected;
+  protected onExerciceClick(){
+    this.isToggled = !this.isToggled;
   }
 
   ngOnInit(): void {
