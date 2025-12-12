@@ -1,7 +1,7 @@
 <div class="characters-wrapper">
   @for(character of charactersFromApi; track character.id){
     <div class="character-card">
-      <h2>{{ character.fullName }}</h2>
+      <h2>{{ character.fullName || (character.firstName + ' ' + character.lastName) | emojiPipe }}</h2>
       <p><strong> {{ character.title }} </strong></p>
       <p><strong>Family: {{ character.family }}</strong></p>
       <img class="character-image" src={{character.imageUrl}} alt={{character.image}}>

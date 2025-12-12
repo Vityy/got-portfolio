@@ -1,0 +1,21 @@
+<h1>CONTINENTS</h1>
+
+@if(continents){
+  <app-continents-list [continentsFromApi]="continents"/>
+}
+
+<br>
+<br>
+<br>
+
+<div>
+  <input #searchInput type="text" placeholder="chercher un personnage" (input)="onSearch(searchInput.value)"><br>
+</div>
+
+<h1>CHARACTERS</h1>
+
+<p class="characters-count"> {{ filteredCharactersString() }} characters</p>
+
+@if(characters){
+  <app-characters-list [charactersFromApi]="filteredCharacters" />
+}

@@ -1,0 +1,25 @@
+input{
+  border-radius: 4px;
+  width: 250px;
+  height: 50px;
+}
+
+div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.characters-count{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected{
+  color: chartreuse;
+}
