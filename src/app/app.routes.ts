@@ -8,5 +8,15 @@ export const routes: Routes = [
     .then((component) => component.ContinentsList) // Lazy loading - charger dynamiquement le composant. Si la route n'est pas activée, le composant n'est pas chargé.
   },
   {path: 'countries', loadComponent: () => import('./components/countries/countries')
-    .then((component) => component.Countries)}
+    .then((component) => component.Countries),
+    title: 'Countries',
+    data:{
+      countries:[
+        {id: 1, name: 'France'},
+        {id: 2, name: 'USA'},
+        {id: 3, name: 'Germany'},
+        {id: 4, name: 'Spain'}
+      ]
+    }
+  }
 ];

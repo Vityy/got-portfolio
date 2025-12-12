@@ -1,1 +1,5 @@
-<p>countries works!</p>
+<!-- <button (click)="changeTitle()">Change Title</button> -->
+
+@for(country of countries; track country.id){
+  <h2>{{ country.id }} - {{ country.name }}</h2>
+}
