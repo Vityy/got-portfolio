@@ -31,6 +31,7 @@ export class App implements OnInit {
   protected isSelected = false;
   protected isWarning = true;
   protected isActive = true;
+  protected isOnline = true;
   protected colorCrimson = 'crimson';
 
   protected toggleSelected(){

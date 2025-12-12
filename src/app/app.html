@@ -6,8 +6,16 @@
   <p>Coucou, ngClass en tableau</p>
 </div> -->
 
-<div [ngStyle]="{color: colorCrimson}">
+<!-- <div [ngStyle]="{color: colorCrimson}">
   <p>Coucou, ngStyle en tableau</p>
+</div> -->
+
+<!-- <div class="coucou" [class.online]="isOnline">
+  <p>Hello, nouvelle manière de faire</p>
+</div> -->
+
+<div class="coucou" [style.color]="isOnline ? 'green' : 'red'">
+  <p>Hello, nouvelle manière de faire</p>
 </div>
 
 <!-- <button (click)="toggleSelected()">Toggle isSelected</button> -->
