@@ -2,11 +2,11 @@
   <header class="characters__header">
     <h1 class="characters__title">Characters</h1>
     <p class="characters__subtitle">
-      {{ charactersFromParent?.length ?? 0 }} result{{ (charactersFromParent?.length ?? 0) > 1 ? 's' : '' }}
+      {{ charactersFromParent.length}} result{{ (charactersFromParent.length) > 1 ? 's' : '' }}
     </p>
   </header>
 
-  @if ((charactersFromParent?.length ?? 0) > 0) {
+  @if ((charactersFromParent.length) > 0) {
     <div class="characters__grid">
       @for (character of charactersFromParent; track character.id) {
         <article [class]="character.family | slugify" class="character-card">
