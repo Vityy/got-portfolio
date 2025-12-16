@@ -1,25 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-
-$title-color: #580e0e;
-$subtitle-color: #ff7504;
-$shadow: 3px 3px 3px black;
-
-body{
-  background: radial-gradient(circle,rgba(145, 107, 0, 1) 0%, rgba(23, 17, 0, 1) 100%);
-}
-
-h1{
-  color: $title-color;
-  text-align: center;
-  -webkit-text-stroke-width: 0.2px;
-  -webkit-text-stroke-color: white;
-}
-
-h2{
-  color: $subtitle-color;
-}
-
-h1,
-h2{
-  text-shadow: $shadow;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top left, #020617 0, #020617 40%, #000 100%);
+  color: #f9fafb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+  "Segoe UI", sans-serif;
+  min-height: 100%;
 }

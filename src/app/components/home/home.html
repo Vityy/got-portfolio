@@ -1,21 +1,19 @@
-<h1>CONTINENTS</h1>
+<header class="app-header">
+  <div class="app-header__inner">
+    <div class="app-header__search">
+      <span class="app-header__search-icon">🔍</span>
+      <input
+        #searchInput
+        class="app-header__search-input"
+        type="text"
+        placeholder="Chercher un personnage"
+        (input)="onSearch(searchInput.value)"
+      >
+    </div>
+  </div>
+</header>
 
-@if(continents){
-  <app-continents-list [continentsFromApi]="continents"/>
-}
+<app-continents-list [continentsFromParent]="continentsToGiveToChild" />
+<app-characters-list [charactersFromParent]="filteredCharacters" />
 
-<br>
-<br>
-<br>
 
-<div>
-  <input #searchInput type="text" placeholder="chercher un personnage" (input)="onSearch(searchInput.value)"><br>
-</div>
-
-<h1>CHARACTERS</h1>
-
-<p class="characters-count"> {{ filteredCharactersString() }} characters</p>
-
-@if(characters){
-  <app-characters-list [charactersFromApi]="filteredCharacters" />
-}

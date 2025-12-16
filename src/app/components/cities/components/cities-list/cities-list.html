@@ -1,0 +1,50 @@
+<div [formGroup]="cityForm">
+  <input type="text" name="name" placeholder="Nom de la ville" formControlName="name"/>
+  <input type="number" name="inhabitants" placeholder="Nombre d'habitants" formControlName="inhabitants"/>
+  <input type="text" name="typicalDish" placeholder="Spécialité culinaire" formControlName="typicalDish"/>
+  <input type="text" name="currency" placeholder="Monnaie" formControlName="currency"/>
+  <input type="text" name="flag" placeholder="Drapeau" formControlName="flag"/>
+
+  <button (click)="addCity()">Add City</button>
+</div>
+
+<br>
+<br>
+
+<div class="cities">
+  @for (city of citiesFromParent; track city.id) {
+    <article class="city-card">
+      <header class="city-card__header">
+        <div class="city-card__flag" aria-hidden="true">{{ city.flag }}</div>
+
+        <div class="city-card__title">
+          <h2 appHoverHighlight class="city-card__name">{{ city.name }}</h2>
+          <p class="city-card__id">City #{{ city.id }}</p>
+        </div>
+      </header>
+
+      <div class="city-card__content">
+        <dl class="city-card__meta">
+          <div class="city-card__row">
+            <dt>Inhabitants</dt>
+            <dd>{{ city.inhabitants }}</dd>
+          </div>
+
+          <div class="city-card__row">
+            <dt>Typical dish</dt>
+            <dd>{{ city.typicalDish }}</dd>
+          </div>
+
+          <div class="city-card__row">
+            <dt>Currency</dt>
+            <dd>{{ city.currency }}</dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+  } @empty {
+    <div class="cities__empty">
+      No cities found.
+    </div>
+  }
+</div>

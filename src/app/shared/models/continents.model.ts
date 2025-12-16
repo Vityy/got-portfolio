@@ -1,4 +1,4 @@
-export interface Continents{
-  id:   number;
+export interface Continents {
+  id: number;
   name: string;
 }

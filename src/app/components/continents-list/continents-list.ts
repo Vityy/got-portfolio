@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Continents } from '../../shared/models/continents.model';
+import {Component, Input} from '@angular/core';
+import {Continents} from '../../shared/models/continents.model';
 
 @Component({
   selector: 'app-continents-list',
@@ -8,5 +8,5 @@ import { Continents } from '../../shared/models/continents.model';
   styleUrl: './continents-list.scss',
 })
 export class ContinentsList {
-  @Input() continentsFromApi!: Continents[];
+  @Input() continentsFromParent! : Continents[];
 }
