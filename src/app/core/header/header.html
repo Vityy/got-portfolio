@@ -1,0 +1,32 @@
+<header class="got-header">
+  <div class="got-header__inner">
+    <a class="got-brand" routerLink="">
+      <span class="got-brand__sigil" aria-hidden="true"></span>
+
+      <span class="got-brand__text">
+        <span class="got-brand__title">Realm Atlas</span>
+        <span class="got-brand__subtitle">Chronicles of the Known World</span>
+      </span>    </a>
+    <nav class="got-nav" aria-label="Main navigation">
+      <a        class="got-link"
+                routerLink="/"
+                routerLinkActive="is-active"
+                [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Home
+      </a>
+
+      <a class="got-link" routerLink="/countries" routerLinkActive="is-active"
+         [routerLinkActiveOptions]="{ exact: true }">
+        Countries
+      </a>
+
+      <a class="got-link" routerLink="/countries/cities" routerLinkActive="is-active">
+        Cities
+      </a>
+    </nav>
+    <div class="got-actions">
+      <span class="got-status">
+        <span class="got-status__dot" aria-hidden="true"></span>
+        <span class="got-status__text">Winter is coming</span>
+      </span>    </div>  </div></header>

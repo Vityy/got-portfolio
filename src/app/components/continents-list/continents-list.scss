@@ -1,0 +1,113 @@
+.continents {
+  padding: 1.5rem clamp(1.5rem, 4vw, 3.25rem) 0;
+  background: radial-gradient(circle at top left, #020617 0, #020617 40%, #000 100%);
+  color: #f9fafb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+  "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e5e7eb;
+  }
+
+  &__subtitle {
+    font-size: 0.8rem;
+    color: #9ca3af;
+  }
+
+  &__scroller {
+    position: relative;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+
+    /* Barre de scroll discrète */
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(55, 65, 81, 0.9);
+      border-radius: 999px;
+    }
+  }
+
+  &__row {
+    display: inline-flex;
+    gap: 0.75rem;
+    min-width: 100%;
+  }
+
+  &__empty {
+    padding: 1rem clamp(1.5rem, 4vw, 3.25rem);
+    font-size: 0.9rem;
+    color: #9ca3af;
+  }
+}
+
+.continent-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(75, 85, 99, 0.9);
+  background: radial-gradient(circle at top left, #020617 0, #020617 65%, #030712 100%);
+  color: #f9fafb;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  transition:
+    transform 140ms ease-out,
+    box-shadow 140ms ease-out,
+    border-color 140ms ease-out,
+    background 140ms ease-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: #f97316;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.9);
+    background: radial-gradient(circle at top left, #111827 0, #020617 60%, #030712 100%);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
+  }
+
+  &__id {
+    font-size: 0.75rem;
+    color: #9ca3af;
+  }
+
+  &__name {
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 768px) {
+  .continents {
+    padding-inline: 1.25rem;
+  }
+}

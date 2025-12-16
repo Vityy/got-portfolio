@@ -1,0 +1,19 @@
+<header class="app-header">
+  <div class="app-header__inner">
+    <div class="app-header__search">
+      <span class="app-header__search-icon">🔍</span>
+      <input
+        #searchInput
+        class="app-header__search-input"
+        type="text"
+        placeholder="Chercher un personnage"
+        (input)="onSearch(searchInput.value)"
+      >
+    </div>
+  </div>
+</header>
+
+<app-continents-list [continentsFromParent]="continentsToGiveToChild" />
+<app-characters-list [charactersFromParent]="filteredCharacters" />
+
+

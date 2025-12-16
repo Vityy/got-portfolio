@@ -1,0 +1,232 @@
+.characters {
+  min-height: auto;
+  padding: 1.5rem clamp(1.5rem, 4vw, 3.25rem) 0;
+  background: transparent;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+  "Segoe UI", sans-serif;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e5e5e5;
+  }
+
+  &__subtitle {
+    font-size: 0.8rem;
+    color: #b3b3b3;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__empty {
+    padding: 1.25rem 0;
+    border-radius: 0.5rem;
+    color: #b3b3b3;
+    font-size: 0.9rem;
+  }
+
+  &__empty-title {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  &__empty-hint {
+    font-size: 0.8rem;
+    color: #8f8f8f;
+  }
+}
+
+
+.character-card {
+  position: relative;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background: #181818;
+  border: 1px solid #181818;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  transition:
+    transform 160ms ease-out,
+    box-shadow 160ms ease-out,
+    border-color 160ms ease-out;
+
+  width: 180px;
+  flex: 0 0 180px;
+
+  &:hover {
+    border-color: #ffffff20;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.95);
+  }
+
+  &__poster {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #000000;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.02);
+    transition: transform 200ms ease-out, filter 200ms ease-out;
+    filter: saturate(1.05) contrast(1.05);
+  }
+
+  &:hover &__image {
+    transform: scale(1.08);
+    filter: saturate(1.08) contrast(1.08);
+  }
+
+  &__tag {
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem;
+    padding: 0.12rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.7);
+    color: #e5e5e5;
+  }
+
+  &__badge {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background: #e50914;
+    color: #ffffff;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 40% 0 0 0;
+    padding: 0.75rem 0.6rem 0.8rem;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.8) 45%,
+        rgba(0, 0, 0, 0.95) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    justify-content: flex-end;
+    transform: translateY(15%);
+    opacity: 0;
+    transition:
+      opacity 180ms ease-out,
+      transform 180ms ease-out;
+  }
+
+  &:hover &__overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__title {
+    font-size: 0.82rem;
+    color: #d4d4d4;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__meta {
+    margin-top: 0.35rem;
+    padding-top: 0.35rem;
+    border-top: 1px solid #333333;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.72rem;
+  }
+
+  &__meta-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr);
+    gap: 0.4rem;
+  }
+
+  &__meta-label {
+    color: #a3a3a3;
+  }
+
+  &__meta-value {
+    color: #f5f5f5;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__meta-value--mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+    font-size: 0.7rem;
+    color: #b3b3b3;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .characters {
+    padding-inline: 0;
+  }
+
+  .characters__grid {
+    gap: 1rem;
+  }
+
+  .character-card {
+    flex: 0 0 calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .character-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.active {
+  border-color: gold;
+}

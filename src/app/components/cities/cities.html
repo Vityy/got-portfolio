@@ -1,0 +1,4 @@
+<div class="cities">
+  <h1><strong>{{ currentTitle }}</strong> - (Title)</h1>
+</div>
+<app-cities-list [citiesFromParent]="cities"  (cityCreated)="addCity($event)"/>

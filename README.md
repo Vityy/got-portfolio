@@ -1,59 +1,40 @@
-# GotPortfolio
+# 🧙 Commandes de base
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+- Création d'un projet Angular :  `ng new <my-app>`
+- Voir ce que nous permet de faire l'Angular CLI : `ng --help`
+- Lançement du serveur : `ng serve`
+- Génération d'un composant : `ng generate component <component-name>` ou `ng g c <component-name>`
+- Génération d'un service : `ng generate service <service-name>` ou `ng g s <service-name>`
 
-## Development server
+# 🏠 Architecture
 
-To start a local development server, run:
+<details closed>
+<summary>Voir notre architecture</summary>
 
-```bash
-ng serve
-```
+![Architecture](./public/architecture.png)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+</details>
 
-## Code scaffolding
+# 🔥 Concepts RxJs
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Observable - [RxJs - Observable](https://rxjs.dev/guide/observable)
+- Subscription - [RxJs - Subscribe](https://rxjs.dev/guide/subscription)
 
-```bash
-ng generate component component-name
-```
+# ⚙️ Fonctionnement de notre site
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+A développer
 
-```bash
-ng generate --help
-```
+## Homepage
 
-## Building
+- Liste de tous les personnages.
+- De ces personnages , on afficher toutes leurs propriétés.
+- Une barre de recherche présente pour filtrer nos personnages.
+- Au click sur un personnage depuis l'accueil, on arrive sur la page du personnage.
 
-To build the project run:
+Base URL : https://thronesapi.com/api/v2/Characters
 
-```bash
-ng build
-```
+# 🧪 Les TP's
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Allez au fichier [TP-1.md](TP-1.md)
+2. Allez au fichier [TP-2.md](TP-2.md)
+3. Allez au fichier [TP-3.md](TP-3.md)

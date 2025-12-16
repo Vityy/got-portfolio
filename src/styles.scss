@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top left, #020617 0, #020617 40%, #000 100%);
+  color: #f9fafb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+  "Segoe UI", sans-serif;
+  min-height: 100%;
+}

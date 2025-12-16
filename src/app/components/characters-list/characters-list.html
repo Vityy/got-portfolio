@@ -1,0 +1,68 @@
+<section class="characters">
+  <header class="characters__header">
+    <h1 class="characters__title">Characters</h1>
+    <p class="characters__subtitle">
+      {{ charactersFromParent.length}} result{{ (charactersFromParent.length) > 1 ? 's' : '' }}
+    </p>
+  </header>
+
+  @if ((charactersFromParent.length) > 0) {
+    <div class="characters__grid">
+      @for (character of charactersFromParent; track character.id) {
+        <article [class]="character.family | slugify" class="character-card">
+          <div class="character-card__poster">
+            <img
+              class="character-card__image"
+              [src]="character.imageUrl || character.image"
+              [alt]="character.fullName || (character.firstName + ' ' + character.lastName)"
+              loading="lazy"
+            />
+
+            <div class="character-card__tag">
+              #{{ character.id }}
+            </div>
+
+            @if (character.family) {
+              <div class="character-card__badge">
+                {{ character.family }}
+              </div>
+            }
+
+            <div class="character-card__overlay">
+              <h2 class="character-card__name">
+                {{ character.fullName || (character.firstName + ' ' + character.lastName) }}
+              </h2>
+
+              @if (character.title) {
+                <p class="character-card__title">{{ character.title }}</p>
+              }
+
+              <div class="character-card__meta">
+                <div class="character-card__meta-row">
+                  <span class="character-card__meta-label">First name</span>
+                  <span class="character-card__meta-value">{{ character.firstName | slugify  }}</span>
+                </div>
+                <div class="character-card__meta-row">
+                  <span class="character-card__meta-label">Last name</span>
+                  <span class="character-card__meta-value">{{ character.lastName }}</span>
+                </div>
+
+                @if (character.fullName) {
+                  <div class="character-card__meta-row">
+                    <span class="character-card__meta-label">Full name</span>
+                    <span class="character-card__meta-value">{{ character.fullName  | suffix: '⚔️' }}</span>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  } @else {
+    <div class="characters__empty">
+      <p class="characters__empty-title">No characters found</p>
+      <p class="characters__empty-hint">Try another name or spelling.</p>
+    </div>
+  }
+</section>

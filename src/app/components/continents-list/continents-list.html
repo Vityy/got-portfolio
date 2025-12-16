@@ -1,0 +1,23 @@
+@if ((continentsFromParent.length) > 0) {
+  <section class="continents">
+    <header class="continents__header">
+      <h2 class="continents__title">Continents</h2>
+      <p class="continents__subtitle">
+        {{ continentsFromParent.length }} continent{{ continentsFromParent.length > 1 ? 's' : '' }}
+      </p>
+    </header>
+
+    <div class="continents__scroller">
+      <div class="continents__row">
+        @for (continent of continentsFromParent; track continent.id) {
+          <button class="continent-chip" type="button">
+            <span class="continent-chip__id">#{{ continent.id }}</span>
+            <span class="continent-chip__name">{{ continent.name }}</span>
+          </button>
+        }
+      </div>
+    </div>
+  </section>
+} @else {
+  <p class="continents__empty">Aucun continent à afficher.</p>
+}
