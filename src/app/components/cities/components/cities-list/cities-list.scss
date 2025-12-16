@@ -151,3 +151,25 @@ form{
     white-space: normal;
   }
 }
+
+.button-add-form {
+  position: relative;
+  padding: 10px 14px;
+  margin-left: 1%;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.92);
+  background: linear-gradient(135deg, rgba(214, 180, 106, 0.95), rgba(242, 208, 138, 0.80));
+  box-shadow: 0 14px 28px rgba(214, 180, 106, 0.18);
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+    transform: translateY(-1px);
+  }
+}
